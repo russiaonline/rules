@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RUSSIA ONLINE — Правила проекта</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="read-progress"><div class="read-progress-bar" id="readBar"></div></div>
+
+<header class="topbar">
+  <div class="logo">RUSSIA <span>ONLINE</span></div>
+  <nav class="nav">
+    <a href="#terms">Термины</a>
+    <a href="#roles">Роли</a>
+    <a href="#rules">Правила</a>
+    <a href="#penalties">Наказания</a>
+    <a href="#law">Правовое</a>
+    <a href="#contacts">Связь</a>
+  </nav>
+  <a class="btn-join" href="https://discord.gg/suWJGDwftX" target="_blank">ИГРАТЬ</a>
+</header>
+
+<section class="hero">
+  <img class="hero-img" src="hero.png" alt="Russia Online">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-kicker">ПРАВИЛА · ДОКУМЕНТАЦИЯ · RUSSIA ONLINE</p>
+    <h1>RUSSIA <span class="grad">ONLINE</span></h1>
+    <p class="hero-sub">★ ЗДЕСЬ У КАЖДОГО СВОЯ РОЛЬ ★</p>
+    <h2>ПРАВИЛА <span class="grad">ПРОЕКТА</span></h2>
+    <p class="hero-desc">Полный свод правил, терминов и наказаний. Читай внимательно — тут нечего пропускать.</p>
+
+    <div class="hero-stats">
+      <div class="stat"><b data-count="16">0</b><span>терминов</span></div>
+      <div class="stat"><b data-count="6">0</b><span>ролей</span></div>
+      <div class="stat"><b data-count="16">0</b><span>правил</span></div>
+      <div class="stat"><b data-count="8">0</b><span>пунктов права</span></div>
+    </div>
+
+    <a href="#terms" class="btn-red pulse">НАЧАТЬ ЧИТАТЬ →</a>
+    <p class="hero-hint">↓ Листай вниз, тут несколько разделов ↓</p>
+  </div>
+</section>
+
+<main class="container">
+
+  <section id="terms" class="section reveal">
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <div>
+        <h2>Игровые термины</h2>
+        <p class="section-sub">16 терминов · сленг, который надо знать</p>
+      </div>
+    </div>
+    <div class="grid" id="termsGrid"></div>
+  </section>
+
+  <section id="roles" class="section reveal">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <div>
+        <h2>Роли на проекте</h2>
+        <p class="section-sub">6 ролей · кто есть кто</p>
+      </div>
+    </div>
+    <div class="grid" id="rolesGrid"></div>
+  </section>
+
+  <section id="rules" class="section reveal">
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <div>
+        <h2>Общие правила</h2>
+        <p class="section-sub">Незнание правил не освобождает от ответственности</p>
+      </div>
+    </div>
+    <div class="accordion" id="rulesAccordion"></div>
+
+    <div class="note">
+      <strong>!</strong> Правила могут не применяться дословно, работаем по здравому смыслу.
+      Главная администрация может не ссылаться на правила.
+    </div>
+  </section>
+
+  <section id="penalties" class="section reveal">
+    <div class="section-head">
+      <span class="section-num">04</span>
+      <div>
+        <h2>Шпаргалка наказаний</h2>
+        <p class="section-sub">Что за что — коротко и по делу</p>
+      </div>
+    </div>
+    <div class="penalty-list" id="penaltyList"></div>
+  </section>
+
+  <section id="law" class="section reveal">
+    <div class="section-head">
+      <span class="section-num">05</span>
+      <div>
+        <h2>Правовая информация</h2>
+        <p class="section-sub">8 пунктов · уважаем чужую собственность</p>
+      </div>
+    </div>
+    <div class="accordion" id="lawAccordion"></div>
+  </section>
+
+  <section id="contacts" class="section reveal">
+    <div class="section-head">
+      <span class="section-num">06</span>
+      <div>
+        <h2>Связь и жалобы</h2>
+        <p class="section-sub">Жалобы, заявки, общение, ивенты</p>
+      </div>
+    </div>
+    <div class="discord-card">
+      <h3>RUSSIA ONLINE</h3>
+      <p>Небольшой уютный сервер нашего проекта. Общение, ивенты, анонсы, жалобы.</p>
+      <p class="discord-meta"><span class="online-dot"></span> 30 участников · 7 онлайн</p>
+      <a class="btn-red" href="https://discord.gg/suWJGDwftX" target="_blank">Перейти в Discord →</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-glow"></div>
+  <p>Russia Online — игровой проект в Roblox. Независимая инициатива, не связанная с правообладателями сторонних произведений. Все товарные знаки принадлежат их владельцам.</p>
+  <p>© 2025 Russia Online</p>
+</footer>
+
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<script>
+/* ===== ДАННЫЕ ===== */
+const terms = [
+  { t: "РП", d: "Ролевая игра, то есть отыгрывание роли своего персонажа. В РП ты ведёшь себя так, как вёл бы себя твой герой в реальной жизни." },
+  { t: "ДМ", d: "Deathmatch. Убийство игрока без причины и без РП-повода. Строго запрещено." },
+  { t: "ТК", d: "Teamkill. Убийство союзника или члена своей фракции без причины." },
+  { t: "РК", d: "Revenge Kill. Месть после смерти. Ты вернулся и убил того, кто тебя убил. Запрещено." },
+  { t: "МГ", d: "Meta Gaming. Использование информации из реальной жизни (Discord, стрим, чат) в игре, которой персонаж не знает." },
+  { t: "ПГ", d: "Power Gaming. Навязывание своей игры другим, действия без шанса на ответ, суперспособности персонажа." },
+  { t: "ФГ", d: "Fear RP / Fail RP. Отсутствие страха за жизнь персонажа. Когда на тебя наставили оружие — ты обязан бояться." },
+  { t: "НРП", d: "NonRP. Поведение вне роли: писать в чат «лол», «кек», обсуждать реальную жизнь, оскорблять по OOC." },
+  { t: "OOC / IC", d: "OOC — вне роли (реальный ты). IC — в роли (твой персонаж). Не путай." },
+  { t: "АФК", d: "AFK. Отшёл от клавиатуры. Долгое АФК на важных постах = наказание." },
+  { t: "БХ", d: "Баг-юз. Использование багов игры для получения преимущества. Бан навсегда." },
+  { t: "СК", d: "Spawn Kill. Убийство на респавне. Запрещено." },
+  { t: "ГМ", d: "God Mode. Режим бессмертия. Игрокам запрещён, только для админов при работе." },
+  { t: "Читы", d: "Любые сторонние программы, макросы, авто-кликеры. Бан перманентно." },
+  { t: "Скам", d: "Мошенничество в сделках, кидок на деньги или имущество. Бан без разбора." },
+  { t: "Твинк", d: "Второй аккаунт для обхода наказания. Бан на все аккаунты." }
+];
+
+const roles = [
+  { t: "Владелец", d: "Основатель и хозяин проекта. Принимает финальные решения, имеет высший приоритет. К нему обращаются только по действительно серьёзным вопросам." },
+  { t: "Администратор", d: "Следит за порядком, рассматривает жалобы, выдаёт наказания, решает спорные ситуации между игроками и фракциями." },
+  { t: "Модератор", d: "Следит за чатом и голосом, выдаёт мут или кик, помогает с простыми вопросами, эскалирует сложное админам." },
+  { t: "Хелпер", d: "Помогает новичкам разобраться в механике проекта. Не выдаёт наказания, но может подсказать и направить." },
+  { t: "Разработчик", d: "Пишет код, фиксит баги, добавляет новый контент. По техническим проблемам — к нему." },
+  { t: "Игрок", d: "Ты. Обязан соблюдать правила проекта, уважать других и отыгрывать роль. Нарушил — получил наказание." }
+];
+
+const rules = [
+  { t: "Незнание правил не освобождает от ответственности", d: "Читай правила внимательно. Если ты их не читал — это не оправдание." },
+  { t: "Уважай других игроков", d: "Оскорбления, токсичность и унижения запрещены. Общайся по-человечески." },
+  { t: "Запрещён ДМ (Deathmatch)", d: "Убийство без причины и без РП-повода строго запрещено." },
+  { t: "Запрещён ТК (Teamkill)", d: "Убийство союзника или члена своей фракции без причины запрещено." },
+  { t: "Запрещён РК (Revenge Kill)", d: "Нельзя возвращаться после смерти и мстить убийце." },
+  { t: "Запрещён МГ (Meta Gaming)", d: "Нельзя использовать информацию из реальной жизни (Discord, стрим, чат) в игре." },
+  { t: "Запрещён ПГ (Power Gaming)", d: "Нельзя навязывать свою игру другим и действовать без шанса на ответ." },
+  { t: "Соблюдай Fear RP", d: "Когда на тебя наставили оружие — ты обязан бояться за жизнь персонажа." },
+  { t: "Не выходи из роли (NonRP)", d: "Пиши в чат только по роли. «Лол», «кек» и обсуждение реальной жизни запрещены." },
+  { t: "Не используй баги (БХ)", d: "Баг-юз для получения преимущества — бан навсегда." },
+  { t: "Запрещён Spawn Kill (СК)", d: "Убийство на респавне запрещено." },
+  { t: "Запрещён God Mode (ГМ)", d: "Режим бессмертия запрещён игрокам. Только для админов при работе." },
+  { t: "Запрещены читы", d: "Любые сторонние программы, макросы, авто-кликеры — перманентный бан." },
+  { t: "Запрещён скам", d: "Мошенничество в сделках, кидок на деньги или имущество — бан без разбора." },
+  { t: "Запрещены твинки", d: "Второй аккаунт для обхода наказания — бан на все аккаунты." },
+  { t: "Соблюдай закон и порядок", d: "Запрещены призывы к насилию, терроризму, экстремизму и разжигание розни." }
+];
+
+const law = [
+  { t: "Независимая фанатская инициатива", d: "Russia Online — независимый игровой проект в Roblox, созданный фанатами для фанатов. Мы не связаны и не поддерживаемся компаниями, которые создавали или владеют правами на сторонние произведения." },
+  { t: "Товарные знаки", d: "Все товарные знаки, логотипы и названия брендов принадлежат их законным правообладателям. Мы не претендуем на эти права." },
+  { t: "Соблюдение законов", d: "Проект обязуется соблюдать действующее законодательство. Запрещены призывы к насилию, терроризму, экстремизму, разжигание розни." },
+  { t: "Возрастное ограничение", d: "Контент ориентирован на аудиторию 16+. Если вам меньше 16 лет, использование проекта возможно только с разрешения родителей." },
+  { t: "Обработка данных", d: "Мы собираем минимально необходимые данные (игровой ник, Discord ID) для работы проекта. Данные не передаются третьим лицам, кроме случаев, предусмотренных законом." },
+  { t: "Авторские права на контент", d: "Все материалы, размещённые на сайте, созданы командой проекта. Если вы считаете, что материал нарушает ваши права — свяжитесь с нами в Discord." },
+  { t: "Отказ от ответственности", d: "Проект предоставляется «как есть». Мы не несём ответственности за действия игроков вне игровой площадки. Администрация может изменять правила без уведомления." },
+  { t: "Контакты правообладателей", d: "Если вы правообладатель и считаете, что мы нарушили ваши права, напишите нам в Discord. Мы оперативно рассмотрим обращение." }
+];
+
+const penalties = [
+  { n: "Оскорбления", p: "мут 12ч - 7д" },
+  { n: "Расизм", p: "перманентный бан" },
+  { n: "Читы", p: "перманентный бан" },
+  { n: "ДМ / ТК", p: "кик, варн, бан" },
+  { n: "РК", p: "варн, бан до 7д" },
+  { n: "Реклама", p: "мут до 7д" },
+  { n: "Скам", p: "бан аккаунта" },
+  { n: "NSFW", p: "бан без предупреждения" }
+];
+
+function renderCards(id, data, accent) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.innerHTML = data.map(it => {
+    const title = accent ? `<span>${it.t.charAt(0)}</span>${it.t.slice(1)}` : it.t;
+    return `<div class="card"><h3>${title}</h3><p>${it.d}</p></div>`;
+  }).join("");
+}
+
+function renderAccordion(id, data) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.innerHTML = data.map(it => `
+    <div class="acc-item">
+      <div class="acc-header"><span class="plus">+</span><span>${it.t}</span></div>
+      <div class="acc-body"><div class="acc-body-inner">${it.d}</div></div>
+    </div>
+  `).join("");
+  el.querySelectorAll(".acc-header").forEach(h => {
+    h.addEventListener("click", () => {
+      const item = h.parentElement;
+      const body = item.querySelector(".acc-body");
+      const open = item.classList.contains("open");
+      el.querySelectorAll(".acc-item").forEach(x => {
+        x.classList.remove("open");
+        x.querySelector(".acc-body").style.maxHeight = null;
+      });
+      if (!open) {
+        item.classList.add("open");
+        body.style.maxHeight = body.scrollHeight + "px";
+      }
+    });
+  });
+}
+
+function renderPenalties() {
+  const el = document.getElementById("penaltyList");
+  if (!el) return;
+  el.innerHTML = penalties.map(p => `
+    <div class="penalty"><span class="name">${p.n}</span><span class="time">${p.p}</span></div>
+  `).join("");
+}
+
+renderCards("termsGrid", terms, true);
+renderCards("rolesGrid", roles, false);
+renderAccordion("rulesAccordion", rules);
+renderAccordion("lawAccordion", law);
+renderPenalties();
+
+const bar = document.getElementById("readBar");
+window.addEventListener("scroll", () => {
+  const h = document.documentElement;
+  const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+  bar.style.width = scrolled + "%";
+});
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add("visible");
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+document.querySelectorAll(".stat b").forEach(b => {
+  const target = +b.dataset.count;
+  let cur = 0;
+  const step = Math.max(1, Math.ceil(target / 40));
+  const timer = setInterval(() => {
+    cur += step;
+    if (cur >= target) { cur = target; clearInterval(timer); }
+    b.textContent = cur;
+  }, 30);
+});
+
+document.addEventListener("mousemove", e => {
+  document.querySelectorAll(".card:hover").forEach(card => {
+    const r = card.getBoundingClientRect();
+    card.style.setProperty("--mx", (e.clientX - r.left) + "px");
+    card.style.setProperty("--my", (e.clientY - r.top) + "px");
+  });
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener("click", e => {
+    const t = document.querySelector(a.getAttribute("href"));
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: "smooth" }); }
+  });
+});
+
+const dot = document.getElementById("cursorDot");
+const ring = document.getElementById("cursorRing");
+if (dot && ring && window.matchMedia("(pointer: fine)").matches) {
+  let mx = innerWidth/2, my = innerHeight/2, rx = mx, ry = my;
+  window.addEventListener("mousemove", e => {
+    mx = e.clientX; my = e.clientY;
+    dot.style.left = mx + "px"; dot.style.top = my + "px";
+  });
+  (function loop(){
+    rx += (mx - rx) * 0.18; ry += (my - ry) * 0.18;
+    ring.style.left = rx + "px"; ring.style.top = ry + "px";
+    requestAnimationFrame(loop);
+  })();
+  const hoverables = "a, button, .card, .acc-header, .penalty, .btn-join, .btn-red";
+  document.querySelectorAll(hoverables).forEach(el => {
+    el.addEventListener("mouseenter", () => document.body.classList.add("cursor-hover"));
+    el.addEventListener("mouseleave", () => document.body.classList.remove("cursor-hover"));
+  });
+  window.addEventListener("mousedown", () => document.body.classList.add("cursor-down"));
+  window.addEventListener("mouseup", () => document.body.classList.remove("cursor-down"));
+}
+</script>
+</body>
+</html>
